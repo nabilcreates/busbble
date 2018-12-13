@@ -25,6 +25,9 @@ ajax({
     // for (var i = 0; i < jsondata.services.length; i++) {
     // }
 
+    simply.text({ title: 'Counter', subtitle: count });
+    simply.text({ title: 'Hey', subtitle: 'count' });
+
 });
 
 simply.on('singleClick', function (e) {
