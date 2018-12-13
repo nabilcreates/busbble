@@ -10,7 +10,6 @@ ajax({
     jsondata = JSON.parse(data)
 
     simply.scrollable(true)
-    simply.style('mono')
 
     // ADD TO STRING FOR EVERYTHING!
     simply.body(`${jsondata.services[0].no.toString()} is arriving in ${Math.floor(jsondata.services[0].next.duration_ms/60000)} Mins \n ${jsondata.services[1].no.toString()} is arriving in ${Math.floor(jsondata.services[0].next.duration_ms/60000)} Mins \n ${jsondata.services[2].no.toString()} is arriving in ${Math.floor(jsondata.services[0].next.duration_ms/60000)} Mins \n
@@ -25,8 +24,8 @@ ajax({
     // for (var i = 0; i < jsondata.services.length; i++) {
     // }
 
-    simply.text({ title: 'Counter', subtitle: count });
-    simply.text({ title: 'Hey', subtitle: 'count' });
+    simply.text({ title: 'Counter', subtitle: count },false);
+    simply.text({ title: 'Hey', subtitle: 'count' },false);
 
 });
 
