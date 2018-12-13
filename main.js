@@ -4,7 +4,7 @@ ajax({
 }, function (data) {
 
     let jsondata = JSON.parse(data)
-    simply.subtitle(jsondata.services[0]);
+    simply.subtitle(jsondata.services[0].no);
 
     // for (var i = 0; i < jsondata.services.length; i++) {
     // }
