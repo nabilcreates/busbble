@@ -4,9 +4,11 @@ ajax({
 }, function (data) {
 
     let jsondata = JSON.parse(data)
-    simply.subtitle(jsondata.services[0].no.toString());
 
-    // for (var i = 0; i < jsondata.services.length; i++) {
-    // }
+    // ADD TO STRING FOR EVERYTHING!
+    
+    for (var i = 0; i < jsondata.services.length; i++) {
+        simply.subtitle(jsondata.services[i].no.toString());
+    }
 
 });
