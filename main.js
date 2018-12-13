@@ -29,13 +29,13 @@ ajax({
 
 });
 
-setInterval(()=>{
+simply.on('singleClick', function (e) {
     ajax({
         url: `https://arrivelah.herokuapp.com/?id=${busstopcode}`
     }, function (data) {
-    
+
         jsondata = JSON.parse(data)
-        clicked ++
+        clicked++
     });
-    
-},500)
+
+});
