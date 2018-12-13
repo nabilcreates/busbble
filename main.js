@@ -7,7 +7,7 @@ ajax({
 
     // ADD TO STRING FOR EVERYTHING!
     
-    simply.subtitle(`${jsondata.services[0].no.toString()} is arriving in ${Math.floor(jsondata.services[0].next.duration_ms/60000)} Mins`);
+    simply.body(`${jsondata.services[0].no.toString()} is arriving in ${Math.floor(jsondata.services[0].next.duration_ms/60000)} Mins`);
 
     // for (var i = 0; i < jsondata.services.length; i++) {
     // }
