@@ -1,2 +1,4 @@
-simply.body('hey there' , false)
-simply.body('hey there1' , true)
+simply.text({
+    "title": "hey",
+    "subtitle": "hey again!"
+})
