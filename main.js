@@ -1,1 +1,1 @@
-console.log('Hey there')
+simply.title('Hello World!');
