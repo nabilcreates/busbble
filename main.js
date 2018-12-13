@@ -7,6 +7,9 @@ ajax({
 
     let jsondata = JSON.parse(data)
 
+
+    simply.scrollable(true)
+    simply.style('mono')
     
     // ADD TO STRING FOR EVERYTHING!
     simply.body(`${jsondata.services[0].no.toString()} is arriving in ${Math.floor(jsondata.services[0].next.duration_ms/60000)} Mins \n
