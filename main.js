@@ -1,6 +1,6 @@
 let busstopcode = 27301
 
-simply.title('Hello World!');
+simply.title(busstopcode);
 ajax({
     url: `https://arrivelah.herokuapp.com/?id=${busstopcode}`
 }, function (data) {
