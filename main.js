@@ -18,16 +18,21 @@ simply.on('singleClick', function (e) {
     // down
 
     if (e.button === 'up') {
-        bsn[count] = 0;
+        bsn[count] = bsn[count] + 1
         simply.body(bsn + '\n Count:' + count)
 
     } else if (e.button === 'down') {
-        bsn[count]--
+        bsn[count] = bsn[count] - 1
         simply.body(bsn + '\n Count:' + count)
 
     } else if (e.button === 'select') {
-        count++
-        simply.body(bsn + '\n Count:' + count)
+        count = count + 1
+    simply.body(bsn + '\n Count:' + count)
 
+        
     }
 });
+
+function rerunUI(){
+    simply.body(bsn + '\n Count:' + count)
+}
