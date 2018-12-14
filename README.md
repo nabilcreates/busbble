@@ -9,4 +9,4 @@ If you switched to Rebble, you will be able to access the Pebble Appstore, Downl
 
 - Hold any of the buttons to confirm and get the bus timing
 
-- To refresh the bus timing, You will have to get out of the app and go in again!
+- To refresh the bus timing, Press the select button on the bus timing page and it will refresh the timings
