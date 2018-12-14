@@ -6,7 +6,7 @@ var currentstatus = 'none';
 // CONFIG
 simply.fullscreen(true)
 
-simply.title('tostring()? again!!!')
+simply.title('JSON>STRINFSINFINF? again!!!')
 
 // RUN A FUNCTION SPECIFIC TO DISPLAYING THE UI
 displayUI()
