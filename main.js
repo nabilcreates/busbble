@@ -3,11 +3,12 @@ var bsn = [2, 7, 3, 0, 1]
 var count = 0;
 var currentstatus = 'none';
 var currentservice = 0;
+var data;
 
 // CONFIG
 simply.fullscreen(true)
 
-simply.title('cycle?')
+simply.title('datatojson?')
 
 // RUN A FUNCTION SPECIFIC TO DISPLAYING THE UI
 displayUI()
@@ -45,7 +46,9 @@ simply.on('longClick', function (e) {
     ajax({
         url: 'https://arrivelah.herokuapp.com/?id=' + bsn.join(""),
         type: 'json'
-    }, function (data) {
+    }, function (json) {
+
+        data = json
 
         currentstatus = 'called api'
         displayUI()
