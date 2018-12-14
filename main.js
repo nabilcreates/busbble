@@ -9,4 +9,4 @@ var b5 = 1;
 simply.fullscreen(true)
 
 // SELECT BUS STOP NUMBER!!!
-simply.body(`${b1}${b2}${b3}${b4}${b5}`)
+simply.body(b1 + b2 + b3 + b4 + b5)
