@@ -43,7 +43,7 @@ simply.on('longClick', function (e) {
     }, function (data) {
 
         // DISPLAY THE DATA
-        simply.body(data);
+        simply.body(JSON.stringify(data));
     });
 });
 
