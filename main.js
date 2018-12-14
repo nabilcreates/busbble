@@ -34,7 +34,7 @@ simply.on('singleClick', function (e) {
 
 function check() {
     if (bsn[count] > 9) {
-        bsn[count = 0]
+        bsn[count] = 0
     }
 
     if (count >= bsn.length) {
