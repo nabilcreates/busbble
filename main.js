@@ -2,6 +2,7 @@ var b1 = 2;
 var bsn = [2, 7, 3, 0, 1]
 var count = 0;
 var currentstatus = 'none';
+var currentservice = 0;
 
 // CONFIG
 simply.fullscreen(true)
@@ -48,10 +49,22 @@ simply.on('longClick', function (e) {
 
         currentstatus = 'called api'
         displayUI()
-        
+
         // DISPLAY THE DATA
-        simply.body(data.services[0].no + ' is going to arrive in ' + toMins(data.services[0].next.duration_ms) + ' Mins');
+        displayBusUI()
         simply.off()
+
+        // USE BUTTON HANDLER TO CYCLE BETWEEN BUS SERVICES
+        simply.on('singleClick', function (e) {
+
+            if (e.button === 'up') {
+                currentservice = currentservice + 1
+                displayBusUI()
+            } else if (e.button === 'down') {
+                currentservice = currentservice - 1
+                displayBusUI()
+            }
+        });
     });
 });
 
@@ -74,6 +87,10 @@ function displayUI() {
     simply.body(bsn.join("") + '\nCount:' + count + "\nCurrent Value:" + bsn[count] + "\nStatus:" + currentstatus)
 }
 
-function toMins(ms){
+function toMins(ms) {
     return Math.floor(ms / 60000)
+}
+
+function displayBusUI(){
+    simply.body(data.services[0].no + ' is going to arrive in ' + toMins(data.services[0].next.duration_ms) + ' Mins');
 }
