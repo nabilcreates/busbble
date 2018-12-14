@@ -98,7 +98,7 @@ function displayUI() {
     simply.subtitle(bsn.join(" | "))
 
     // SHOWS THE CURRENT COUNT OVER THE MAX NUMBER
-    simply.body('Count:' + count.toString() + '/ 4')
+    simply.body('Count: ' + count.toString() + '/4')
 }
 
 // CONVERT TO MINUTES
