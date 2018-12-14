@@ -109,6 +109,7 @@ function toMins(ms) {
 }
 
 function displayBusUI() {
+    simply.subtitle(currentservice)
     simply.body(data.services[currentservice].no + ' is going to arrive in ' + toMins(data.services[currentservice].next.duration_ms) + ' Mins');
 }
 
