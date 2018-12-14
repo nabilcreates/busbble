@@ -50,7 +50,7 @@ simply.on('longClick', function (e) {
         displayUI()
         
         // DISPLAY THE DATA
-        simply.body(data.toString());
+        simply.body(JSON.stringify(data));
     });
 });
 
