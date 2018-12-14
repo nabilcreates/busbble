@@ -19,9 +19,15 @@ simply.on('singleClick', function (e) {
 
     if (e.button === 'up') {
         bsn[count] = 0;
+        simply.body(bsn + '\n Count:' + count)
+
     } else if (e.button === 'down') {
         bsn[count]--
+        simply.body(bsn + '\n Count:' + count)
+
     } else if (e.button === 'select') {
         count++
+        simply.body(bsn + '\n Count:' + count)
+
     }
 });
