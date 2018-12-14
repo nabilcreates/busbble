@@ -33,12 +33,21 @@ simply.on('singleClick', function (e) {
     }
 });
 
+simply.on('longClick', function (e) {
+    ajax({
+        url: 'https://arrivelah.herokuapp.com/?id=' + bsn.join(""),
+        type: 'json'
+    }, function (data) {
+        simply.body(data);
+    });
+});
+
 function check() {
     if (bsn[count] > 9) {
         bsn[count] = 0
     }
 
-    if(bsn[count] < 0){
+    if (bsn[count] < 0) {
         bsn[count] = 9
     }
 
@@ -46,6 +55,7 @@ function check() {
         count = 0
     }
 }
+
 
 function displayUI() {
     simply.body(bsn.join("") + '\nCount:' + count + "\nCurrent Value:" + bsn[count])
