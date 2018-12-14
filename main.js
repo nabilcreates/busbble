@@ -8,7 +8,7 @@ var data;
 // CONFIG
 simply.fullscreen(true)
 
-simply.title('datatojson?')
+simply.title('cycle again?')
 
 // RUN A FUNCTION SPECIFIC TO DISPLAYING THE UI
 displayUI()
