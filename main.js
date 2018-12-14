@@ -5,7 +5,7 @@ var count = 0;
 // CONFIG
 simply.fullscreen(true)
 
-// SELECT BUS STOP NUMBER!!!
+simply.title('ajax added!')
 
 // RUN A FUNCTION SPECIFIC TO DISPLAYING THE UI
 displayUI()
@@ -33,11 +33,16 @@ simply.on('singleClick', function (e) {
     }
 });
 
+// LONG CLICK HANDLER FOR BUTTON
 simply.on('longClick', function (e) {
+
+    // MAKE AN API CALL
     ajax({
         url: 'https://arrivelah.herokuapp.com/?id=' + bsn.join(""),
         type: 'json'
     }, function (data) {
+
+        // DISPLAY THE DATA
         simply.body(data);
     });
 });
