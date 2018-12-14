@@ -1,5 +1,5 @@
-let bsn = []
+let busstopnumber;
 
 // SELECT BUS STOP NUMBER!!!
-bsn = [2,7,3,0,1]
-simply.body(bsn.join(""))
+busstopnumber = [2,7,3,0,1]
+simply.body(busstopnumber.join(""))
