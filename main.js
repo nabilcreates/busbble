@@ -6,7 +6,7 @@ var currentstatus = 'none';
 // CONFIG
 simply.fullscreen(true)
 
-simply.title('IDKk? again!!!')
+simply.title('trying out? again!!!')
 
 // RUN A FUNCTION SPECIFIC TO DISPLAYING THE UI
 displayUI()
@@ -71,4 +71,8 @@ function check() {
 
 function displayUI() {
     simply.body(bsn.join("") + '\nCount:' + count + "\nCurrent Value:" + bsn[count] + "\nStatus:" + currentstatus)
+}
+
+function toMins(ms){
+    return Math.floor(ms / 60000)
 }
