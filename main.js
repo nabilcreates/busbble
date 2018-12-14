@@ -61,7 +61,7 @@ function check() {
 
 // DISPLAY THE SLECT BUS STOP CODE UI
 function displayUI() {
-    simply.title('Busbble v0.0.2r6')
+    simply.title('Busbble v0.0.2r7')
     simply.subtitle(bsn.join(" | "))
 
     // SHOWS THE CURRENT COUNT OVER THE MAX
@@ -71,9 +71,9 @@ function displayUI() {
 // CONVERT TO MINUTES
 function toMins(ms) {
     if (Math.floor(ms / 60000) < 0) {
-        return '(arr)'
+        return ' is Arriving!'
     } else {
-        return Math.floor(ms / 60000)
+        return ' is Arriving in ' + Math.floor(ms / 60000) + ' Min(s)'
     }
 }
 
@@ -83,7 +83,7 @@ function displayBusUI() {
     var minus = data.services.length - 1
     simply.title(bsn.join(""))
     simply.subtitle(currentservice.toString() + '/' + minus.toString())
-    simply.body(data.services[currentservice].no + ' is going to arrive in ' + toMins(data.services[currentservice].next.duration_ms) + ' Mins');
+    simply.body(data.services[currentservice].no + toMins(data.services[currentservice].next.duration_ms));
 }
 
 function checkBus() {
