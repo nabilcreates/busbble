@@ -7,7 +7,7 @@ var currentservice = 0;
 // CONFIG
 simply.fullscreen(true)
 
-simply.title('add off? again!!!')
+simply.title('cycle?')
 
 // RUN A FUNCTION SPECIFIC TO DISPLAYING THE UI
 displayUI()
@@ -88,7 +88,11 @@ function displayUI() {
 }
 
 function toMins(ms) {
-    return Math.floor(ms / 60000)
+    if(Math.floor(ms / 60000) < 0){
+        return '(arr)'
+    }else{
+        return Math.floor(ms / 60000)
+    }
 }
 
 function displayBusUI(){
