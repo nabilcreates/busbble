@@ -62,10 +62,19 @@ simply.on('longClick', function (e) {
 
             if (e.button === 'up') {
                 currentservice = currentservice + 1
+                checkBus()
+
                 displayBusUI()
             } else if (e.button === 'down') {
                 currentservice = currentservice - 1
+                checkBus()
+
                 displayBusUI()
+            } else if (e.button === 'select') {
+                callApi()
+
+                displayBusUI()
+
             }
         });
     });
@@ -87,17 +96,38 @@ function check() {
 
 
 function displayUI() {
-    simply.body(bsn.join("") + '\nCount:' + count + "\nCurrent Value:" + bsn[count] + "\nStatus:" + currentstatus)
+    simply.title(bsn.join(""))
+    simply.body('Count:' + count + "\nCurrent Value:" + bsn[count] + "\nStatus: " + currentstatus)
 }
 
 function toMins(ms) {
-    if(Math.floor(ms / 60000) < 0){
+    if (Math.floor(ms / 60000) < 0) {
         return '(arr)'
-    }else{
+    } else {
         return Math.floor(ms / 60000)
     }
 }
 
-function displayBusUI(){
+function displayBusUI() {
     simply.body(data.services[currentservice].no + ' is going to arrive in ' + toMins(data.services[currentservice].next.duration_ms) + ' Mins');
+}
+
+function checkBus() {
+    if (currentservice > data.services.length) {
+        currentservice = 0
+    }
+
+    if (currentservice < 0) {
+        currentservice = data.services.length
+    }
+}
+
+function callApi() {
+    ajax({
+        url: 'https://arrivelah.herokuapp.com/?id=' + bsn.join(""),
+        type: 'json'
+    }, function (json) {
+
+        data = json
+    });
 }
