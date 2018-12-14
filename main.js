@@ -3,7 +3,7 @@ var count = 0;
 var currentstatus = 'none';
 var currentservice = 0;
 var data;
-var loadedApi = false;
+
 // CONFIG
 simply.fullscreen(true)
 
@@ -36,35 +36,12 @@ simply.on('singleClick', function (e) {
 // LONG CLICK HANDLER FOR BUTTON
 simply.on('longClick', function (e) {
 
-    // MAKE AN API CALL
+    currentstatus = 'making api call'
+    displayUI()
+
+    // MAKE AN API CALL and all necessary functions for the bus screen
     callApi()
 
-    if (loadedApi) {
-        // DISPLAY THE DATA
-        displayBusUI()
-        simply.off()
-
-        // USE BUTTON HANDLER TO CYCLE BETWEEN BUS SERVICES
-        simply.on('singleClick', function (e) {
-
-            if (e.button === 'up') {
-                currentservice = currentservice + 1
-                checkBus()
-
-                displayBusUI()
-            } else if (e.button === 'down') {
-                currentservice = currentservice - 1
-                checkBus()
-
-                displayBusUI()
-            } else if (e.button === 'select') {
-                callApi()
-
-                displayBusUI()
-
-            }
-        });
-    }
 });
 
 function check() {
@@ -84,11 +61,11 @@ function check() {
 
 // DISPLAY THE SLECT BUS STOP CODE UI
 function displayUI() {
-    simply.title('Busbble v0.0.2')
+    simply.title('Busbble v0.0.2r3')
     simply.subtitle(bsn.join(" | "))
 
-    // SHOWS THE CURRENT COUNT OVER THE MAX NUMBER
-    simply.body('Count: ' + count.toString() + '/4')
+    // SHOWS THE CURRENT COUNT OVER THE MAX
+    simply.body('Count:' + count.toString() + '/ 5')
 }
 
 // CONVERT TO MINUTES
@@ -121,12 +98,38 @@ function checkBus() {
 }
 
 function callApi() {
-    loadedApi = false
     ajax({
         url: 'https://arrivelah.herokuapp.com/?id=' + bsn.join(""),
         type: 'json'
     }, function (json) {
+
         data = json
-        loadedApi = true;
+
+        currentstatus = 'called api'
+        displayUI()
+
+        // DISPLAY THE DATA
+        displayBusUI()
+        simply.off()
+
+        // USE BUTTON HANDLER TO CYCLE BETWEEN BUS SERVICES
+        simply.on('singleClick', function (e) {
+
+            if (e.button === 'up') {
+                currentservice = currentservice + 1
+                checkBus()
+
+                displayBusUI()
+            } else if (e.button === 'down') {
+                currentservice = currentservice - 1
+                checkBus()
+
+                displayBusUI()
+            } else if (e.button === 'select') {
+                callApi()
+                displayBusUI()
+
+            }
+        });
     });
 }
