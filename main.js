@@ -6,7 +6,7 @@ var currentstatus = 'none';
 // CONFIG
 simply.fullscreen(true)
 
-simply.title('JSON>STRINFSINFINF? again!!!')
+simply.title('IDKk? again!!!')
 
 // RUN A FUNCTION SPECIFIC TO DISPLAYING THE UI
 displayUI()
@@ -50,7 +50,7 @@ simply.on('longClick', function (e) {
         displayUI()
         
         // DISPLAY THE DATA
-        simply.body(JSON.stringify(data));
+        simply.body(data.services[0].number);
     });
 });
 
