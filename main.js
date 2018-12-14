@@ -37,6 +37,10 @@ function check() {
         bsn[count] = 0
     }
 
+    if(bsn[count] < 0){
+        bsn[count] = 9
+    }
+
     if (count >= bsn.length) {
         count = 0
     }
