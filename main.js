@@ -50,7 +50,7 @@ simply.on('longClick', function (e) {
         displayUI()
         
         // DISPLAY THE DATA
-        simply.body(data.services[0].number);
+        simply.body(data.services[0].no);
     });
 });
 
