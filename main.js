@@ -6,7 +6,7 @@ var currentstatus = 'none';
 // CONFIG
 simply.fullscreen(true)
 
-simply.title('JSON.stringify again!!!')
+simply.title('tostring()? again!!!')
 
 // RUN A FUNCTION SPECIFIC TO DISPLAYING THE UI
 displayUI()
@@ -38,6 +38,7 @@ simply.on('singleClick', function (e) {
 simply.on('longClick', function (e) {
 
     currentstatus = 'making api call'
+    displayUI()
 
     // MAKE AN API CALL
     ajax({
@@ -46,9 +47,10 @@ simply.on('longClick', function (e) {
     }, function (data) {
 
         currentstatus = 'called api'
+        displayUI()
         
         // DISPLAY THE DATA
-        simply.body(JSON.stringify(data));
+        simply.body(data.toString());
     });
 });
 
