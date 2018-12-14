@@ -6,9 +6,6 @@ var data;
 
 // CONFIG
 simply.fullscreen(true)
-simply.scrollable(true)
-
-simply.title('cycle again?')
 
 // RUN A FUNCTION SPECIFIC TO DISPLAYING THE UI
 displayUI()
@@ -98,7 +95,7 @@ function check() {
 // DISPLAY THE SLECT BUS STOP CODE UI
 function displayUI() {
     simply.title('Busbble')
-    simply.subtitle("Bus Stop Number: " + bsn.join(""))
+    simply.subtitle(bsn.join("|"))
     simply.body('Count:' + count + "\nCurrent Value:" + bsn[count] + "\nStatus: " + currentstatus)
 }
 
