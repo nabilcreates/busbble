@@ -1,9 +1,5 @@
-simply.text({
-    "title": "hey",
-    "subtitle": "hey again!"
-},false)
+let bsn = []
 
-simply.text({
-    "title": "hey1",
-    "subtitle": "hey again!"
-},false)
+// SELECT BUS STOP NUMBER!!!
+bsn = [2,7,3,0,1]
+simply.body(bsn)
