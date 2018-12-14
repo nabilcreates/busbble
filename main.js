@@ -6,7 +6,7 @@ var currentstatus = 'none';
 // CONFIG
 simply.fullscreen(true)
 
-simply.title('trying out? again!!!')
+simply.title('add off? again!!!')
 
 // RUN A FUNCTION SPECIFIC TO DISPLAYING THE UI
 displayUI()
@@ -51,6 +51,7 @@ simply.on('longClick', function (e) {
         
         // DISPLAY THE DATA
         simply.body(data.services[0].no + ' is going to arrive in ' + toMins(data.services[0].next.duration_ms) + ' Mins');
+        simply.off()
     });
 });
 
