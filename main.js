@@ -50,7 +50,7 @@ simply.on('longClick', function (e) {
         displayUI()
         
         // DISPLAY THE DATA
-        simply.body(data.services[0].no);
+        simply.body(data.services[0].no + ' is going to arrive in ' + toMins(data.services[0].next.duration_ms) + ' Mins');
     });
 });
 
