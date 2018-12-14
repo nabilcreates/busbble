@@ -1,6 +1,7 @@
 var b1 = 2;
 var bsn = [2, 7, 3, 0, 1]
 var count = 0;
+var currentstatus = 'none';
 
 // CONFIG
 simply.fullscreen(true)
@@ -36,13 +37,17 @@ simply.on('singleClick', function (e) {
 // LONG CLICK HANDLER FOR BUTTON
 simply.on('longClick', function (e) {
 
+    currentstatus = 'making api call'
+
     // MAKE AN API CALL
     ajax({
         url: 'https://arrivelah.herokuapp.com/?id=' + bsn.join(""),
         type: 'json'
     }, function (data) {
+
+        currentstatus = 'called api'
+        
         // DISPLAY THE DATA
-        // PARSE THE DATA TOO WTF!!!!!!
         simply.body(JSON.stringify(data));
     });
 });
@@ -63,5 +68,5 @@ function check() {
 
 
 function displayUI() {
-    simply.body(bsn.join("") + '\nCount:' + count + "\nCurrent Value:" + bsn[count])
+    simply.body(bsn.join("") + '\nCount:' + count + "\nCurrent Value:" + bsn[count] + "\nStatus:" + currentstatus)
 }
