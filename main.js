@@ -48,5 +48,5 @@ function check() {
 }
 
 function displayUI() {
-    simply.body(bsn + '\n Count:' + count)
+    simply.body(bsn.join("") + '\nCount:' + count + "\nCurrent Value:" + bsn[count])
 }
