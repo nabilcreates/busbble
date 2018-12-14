@@ -3,7 +3,7 @@ var count = 0;
 var currentstatus = 'none';
 var currentservice = 0;
 var data;
-
+var loadedApi = false;
 // CONFIG
 simply.fullscreen(true)
 
@@ -36,35 +36,35 @@ simply.on('singleClick', function (e) {
 // LONG CLICK HANDLER FOR BUTTON
 simply.on('longClick', function (e) {
 
-    currentstatus = 'making api call'
-    displayUI()
-
     // MAKE AN API CALL
     callApi()
-    // DISPLAY THE DATA
-    displayBusUI()
-    simply.off()
 
-    // USE BUTTON HANDLER TO CYCLE BETWEEN BUS SERVICES
-    simply.on('singleClick', function (e) {
+    if (loadedApi) {
+        // DISPLAY THE DATA
+        displayBusUI()
+        simply.off()
 
-        if (e.button === 'up') {
-            currentservice = currentservice + 1
-            checkBus()
+        // USE BUTTON HANDLER TO CYCLE BETWEEN BUS SERVICES
+        simply.on('singleClick', function (e) {
 
-            displayBusUI()
-        } else if (e.button === 'down') {
-            currentservice = currentservice - 1
-            checkBus()
+            if (e.button === 'up') {
+                currentservice = currentservice + 1
+                checkBus()
 
-            displayBusUI()
-        } else if (e.button === 'select') {
-            callApi()
+                displayBusUI()
+            } else if (e.button === 'down') {
+                currentservice = currentservice - 1
+                checkBus()
 
-            displayBusUI()
+                displayBusUI()
+            } else if (e.button === 'select') {
+                callApi()
 
-        }
-    });
+                displayBusUI()
+
+            }
+        });
+    }
 });
 
 function check() {
@@ -121,11 +121,12 @@ function checkBus() {
 }
 
 function callApi() {
+    loadedApi = false
     ajax({
         url: 'https://arrivelah.herokuapp.com/?id=' + bsn.join(""),
         type: 'json'
     }, function (json) {
-
         data = json
+        loadedApi = true;
     });
 }
