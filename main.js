@@ -7,9 +7,10 @@ simply.fullscreen(true)
 
 // SELECT BUS STOP NUMBER!!!
 
-// displays the bus stop number for now
-simply.body(bsn.join("") + '\n Count:' + count)
+// RUN A FUNCTION SPECIFIC TO DISPLAYING THE UI
+displayUI()
 
+// USE BUTTON HANDLER
 simply.on('singleClick', function (e) {
 
     // e.button
@@ -20,15 +21,15 @@ simply.on('singleClick', function (e) {
     if (e.button === 'up') {
         bsn[count] = bsn[count] + 1
         check()
-        rerunUI()
+        displayUI()
     } else if (e.button === 'down') {
         bsn[count] = bsn[count] - 1
         check()
-        rerunUI()
+        displayUI()
     } else if (e.button === 'select') {
         count = count + 1
         check()
-        rerunUI()
+        displayUI()
     }
 });
 
@@ -46,6 +47,6 @@ function check() {
     }
 }
 
-function rerunUI() {
+function displayUI() {
     simply.body(bsn + '\n Count:' + count)
 }
