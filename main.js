@@ -95,11 +95,13 @@ function check() {
 }
 
 
+// DISPLAY THE SLECT BUS STOP CODE UI
 function displayUI() {
     simply.title(bsn.join(""))
     simply.body('Count:' + count + "\nCurrent Value:" + bsn[count] + "\nStatus: " + currentstatus)
 }
 
+// CONVERT TO MINUTES
 function toMins(ms) {
     if (Math.floor(ms / 60000) < 0) {
         return '(arr)'
@@ -108,18 +110,22 @@ function toMins(ms) {
     }
 }
 
+// DISPLAYS THE BUS UI
 function displayBusUI() {
-    simply.subtitle(currentservice)
+    // data.services.lenth - 1 because index starts counting at 0 and the length starts counting from 1
+    simply.subtitle(currentservice + '/' + data.services.length - 1)
     simply.body(data.services[currentservice].no + ' is going to arrive in ' + toMins(data.services[currentservice].next.duration_ms) + ' Mins');
 }
 
 function checkBus() {
-    if (currentservice > data.services.length) {
+
+    // data.services.lenth - 1 because index starts counting at 0 and the length starts counting from 1
+    if (currentservice > data.services.length - 1) {
         currentservice = 0
     }
 
     if (currentservice < 0) {
-        currentservice = data.services.length
+        currentservice = data.services.length - 1
     }
 }
 
