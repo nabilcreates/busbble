@@ -113,7 +113,7 @@ function toMins(ms) {
 // DISPLAYS THE BUS UI
 function displayBusUI() {
     // data.services.lenth - 1 because index starts counting at 0 and the length starts counting from 1
-    simply.subtitle(currentservice + ' out of ' + data.services.length - 1 + ' services')
+    simply.subtitle(currentservice)
     simply.body(data.services[currentservice].no + ' is going to arrive in ' + toMins(data.services[currentservice].next.duration_ms) + ' Mins');
 }
 
