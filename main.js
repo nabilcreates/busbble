@@ -96,8 +96,9 @@ function check() {
 function displayUI() {
     simply.title('Busbble')
     simply.subtitle(bsn.join(" | "))
-    var minus = data.services.length - 1
-    simply.body('Count:' + count.toString() + '/' + minus.toString())
+
+    // SHOWS THE CURRENT COUNT OVER THE MAX NUMBER
+    simply.body('Count:' + count.toString() + '/ 4')
 }
 
 // CONVERT TO MINUTES
