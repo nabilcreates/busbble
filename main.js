@@ -5,7 +5,7 @@ var count = 0;
 // CONFIG
 simply.fullscreen(true)
 
-simply.title('JSON.parse')
+simply.title('JSON.stringify again!!!')
 
 // RUN A FUNCTION SPECIFIC TO DISPLAYING THE UI
 displayUI()
@@ -43,7 +43,7 @@ simply.on('longClick', function (e) {
     }, function (data) {
         // DISPLAY THE DATA
         // PARSE THE DATA TOO WTF!!!!!!
-        simply.body(JSON.parse(data));
+        simply.body(JSON.stringify(data));
     });
 });
 
