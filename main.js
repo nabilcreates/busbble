@@ -1,4 +1,3 @@
-var b1 = 2;
 var bsn = [2, 7, 3, 0, 1]
 var count = 0;
 var currentstatus = 'none';
