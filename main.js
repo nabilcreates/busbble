@@ -16,9 +16,9 @@ simply.on('singleClick', function (e) {
     // select
     // up
     // down
-    
+
     if (e.button === 'up') {
-        bsn[count]++
+        bsn[count] = 0;
     } else if (e.button === 'down') {
         bsn[count]--
     } else if (e.button === 'select') {
