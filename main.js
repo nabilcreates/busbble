@@ -99,5 +99,5 @@ function toMins(ms) {
 }
 
 function displayBusUI(){
-    simply.body(data.services[0].no + ' is going to arrive in ' + toMins(data.services[0].next.duration_ms) + ' Mins');
+    simply.body(data.services[currentservice].no + ' is going to arrive in ' + toMins(data.services[currentservice].next.duration_ms) + ' Mins');
 }
