@@ -41,9 +41,8 @@ simply.on('longClick', function (e) {
         url: 'https://arrivelah.herokuapp.com/?id=' + bsn.join(""),
         type: 'json'
     }, function (data) {
-
         // DISPLAY THE DATA
-        simply.body(JSON.stringify(data));
+        simply.body(JSON.parse(data));
     });
 });
 
