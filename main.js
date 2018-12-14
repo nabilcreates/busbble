@@ -8,7 +8,7 @@ simply.fullscreen(true)
 // SELECT BUS STOP NUMBER!!!
 
 // displays the bus stop number for now
-simply.body(bsn + '\n Count:' + count)
+simply.body(bsn.join("") + '\n Count:' + count)
 
 simply.on('singleClick', function (e) {
 
