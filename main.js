@@ -5,7 +5,7 @@ var count = 0;
 // CONFIG
 simply.fullscreen(true)
 
-simply.title('ajax added!')
+simply.title('JSON.stringify')
 
 // RUN A FUNCTION SPECIFIC TO DISPLAYING THE UI
 displayUI()
