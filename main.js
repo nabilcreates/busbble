@@ -40,40 +40,30 @@ simply.on('longClick', function (e) {
     displayUI()
 
     // MAKE AN API CALL
-    ajax({
-        url: 'https://arrivelah.herokuapp.com/?id=' + bsn.join(""),
-        type: 'json'
-    }, function (json) {
+    callApi()
+    // DISPLAY THE DATA
+    displayBusUI()
+    simply.off()
 
-        data = json
+    // USE BUTTON HANDLER TO CYCLE BETWEEN BUS SERVICES
+    simply.on('singleClick', function (e) {
 
-        currentstatus = 'called api'
-        displayUI()
+        if (e.button === 'up') {
+            currentservice = currentservice + 1
+            checkBus()
 
-        // DISPLAY THE DATA
-        displayBusUI()
-        simply.off()
+            displayBusUI()
+        } else if (e.button === 'down') {
+            currentservice = currentservice - 1
+            checkBus()
 
-        // USE BUTTON HANDLER TO CYCLE BETWEEN BUS SERVICES
-        simply.on('singleClick', function (e) {
+            displayBusUI()
+        } else if (e.button === 'select') {
+            callApi()
 
-            if (e.button === 'up') {
-                currentservice = currentservice + 1
-                checkBus()
+            displayBusUI()
 
-                displayBusUI()
-            } else if (e.button === 'down') {
-                currentservice = currentservice - 1
-                checkBus()
-
-                displayBusUI()
-            } else if (e.button === 'select') {
-                callApi()
-
-                displayBusUI()
-
-            }
-        });
+        }
     });
 });
 
