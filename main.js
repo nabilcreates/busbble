@@ -95,7 +95,7 @@ function check() {
 // DISPLAY THE SLECT BUS STOP CODE UI
 function displayUI() {
     simply.title('Busbble')
-    simply.subtitle(bsn.join("|"))
+    simply.subtitle(bsn.join(" | "))
     simply.body('Count:' + count + "\nCurrent Value:" + bsn[count] + "\nStatus: " + currentstatus)
 }
 
