@@ -1,9 +1,9 @@
-let b1 = 2;
-let b1 = 2;
-let b2 = 7;
-let b3 = 3;
-let b4 = 0;
-let b5 = 1;
+var b1 = 2;
+var b1 = 2;
+var b2 = 7;
+var b3 = 3;
+var b4 = 0;
+var b5 = 1;
 
 // CONFIG
 simply.fullscreen(true)
