@@ -5,7 +5,7 @@ var currentservice = 0;
 var data;
 
 // CONFIG
-simply.fullscreen(true)
+simply.fullscreen(false)
 
 // RUN A FUNCTION SPECIFIC TO DISPLAYING THE UI
 displayUI()
