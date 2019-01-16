@@ -1,4 +1,4 @@
-var bsn = [2, 7, 3, 0, 1]
+var bsn = [0, 0, 0, 0, 0]
 var count = 0;
 var currentstatus = 'none';
 var currentservice = 0;
@@ -66,6 +66,7 @@ function displayUI() {
 
     // SHOWS THE CURRENT COUNT OVER THE MAX
     simply.body('Count: ' + count.toString() + '/4')
+    simply.body('Item: ' + bsn[count])
 }
 
 // CONVERT TO MINUTES
