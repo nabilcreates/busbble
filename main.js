@@ -61,11 +61,11 @@ function check() {
 
 // DISPLAY THE SLECT BUS STOP CODE UI
 function displayUI() {
-    simply.title('Busbble v0.0.2r10')
+    simply.title('Busbble v1')
     simply.subtitle(bsn.join("/"))
 
     // SHOWS THE CURRENT COUNT OVER THE MAX
-    simply.body('Item:' + bsn[count])
+    simply.body('Item:' + bsn[count] + '\n Index: ' + count.toString())
 }
 
 // CONVERT TO MINUTES
