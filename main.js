@@ -65,7 +65,7 @@ function displayUI() {
     simply.subtitle(bsn.join("/"))
 
     // SHOWS THE CURRENT COUNT OVER THE MAX
-    simply.body('Item:' + bsn[count] + '\n Index: ' + count.toString())
+    simply.body('Item:' + bsn[count] + '\nIndex: ' + count.toString() + '\nCopyright © Nabil Ridhwanshah 2018')
 }
 
 // CONVERT TO MINUTES
