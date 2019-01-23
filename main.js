@@ -70,7 +70,7 @@ function displayUI() {
 
 // CONVERT TO MINUTES
 function toMins(ms) {
-    if (Math.floor(ms / 60000) < 0) {
+    if (Math.floor(ms / 60000) <= 1) {
         return ' is Arriving!'
     } else {
         return ' is Arriving in ' + Math.floor(ms / 60000) + ' Min(s)'
