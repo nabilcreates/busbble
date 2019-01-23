@@ -61,7 +61,7 @@ function check() {
 
 // DISPLAY THE SLECT BUS STOP CODE UI
 function displayUI() {
-    simply.title('Busbble v1')
+    simply.title('Busbble v1r1')
     simply.subtitle(bsn.join("/"))
 
     // SHOWS THE CURRENT COUNT OVER THE MAX
